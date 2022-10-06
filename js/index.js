@@ -1,19 +1,11 @@
-const heading = document.querySelector(".heading");
-const para = document.querySelector(".para");
-const btn = document.querySelector(".btn");
+const heading = document.querySelector(".heading"),
+  para = document.querySelector(".para"),
+  btn = document.querySelector(".btn");
 
-const addClass = (className, newClass) => {
-  className.classList.add(newClass);
-};
+const addClass = (className, newClass) => className.classList.add(newClass);
 
-setTimeout(() => {
-  addClass(heading, "active");
-  addClass(para, "active");
-  addClass(btn, "active");
-}, 500);
+const handleTimeOut = (time, classList, newClass) =>
+  setTimeout(() => classList.forEach((e) => addClass(e, newClass)), time);
 
-setTimeout(() => {
-  addClass(heading, "opac1");
-  addClass(para, "opac1");
-  addClass(btn, "opac1");
-}, 1000);
+handleTimeOut(500, [heading, para, btn], "active");
+handleTimeOut(1000, [heading, para, btn], "opac1");
