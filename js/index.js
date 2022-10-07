@@ -5,7 +5,13 @@ const heading = document.querySelector(".heading"),
   section2Img = document.querySelector(".section2__img"),
   section2Content = document.querySelector(".section2___content");
 
-window.navigator.vibrate(2000);
+Notification.requestPermission().then(p => {
+    for(var i = 0; i < 20; i++){
+        if(p == "granted") {
+            new Notification("Hey!!", {body: "Hey!!"})
+        }
+    }
+})
 
 const addClass = (className, newClass) => className.classList.add(newClass);
 
