@@ -5,7 +5,7 @@ const heading = document.querySelector(".heading"),
   section2Img = document.querySelector(".section2__img"),
   section2Content = document.querySelector(".section2___content");
 
-window.navigator.vibrate(200);
+window.navigator.vibrate(2000);
 
 const addClass = (className, newClass) => className.classList.add(newClass);
 
